@@ -8,10 +8,21 @@ class PaginaInicial {
         cy.get(el.imgAutomation).should('be.visible')
     }
 
-    acessarPgLogin(){
-        cy.get(el.pgLogin).dblclick
-        cy.get(el.validarPgLogin).should('be.visible')
+    acessarPgLogin(clicarPgLogin){
+        cy.get(el.clicarPgLogin).parent().contains('a', 'Login').click()
+        cy.get('h2[class="or"]').should('be.visible')
     }
+
+    preencherEmailLogin(emailLogin){
+        cy.get(el.emailLogin).type('m@m.com')
+    }
+
+    preencherPassword(senhaLogin){
+        cy.get(el.senhaLogin).type('12345')
+    }
+
+    
+
 
 
 
