@@ -22,7 +22,7 @@ describe('Teste Desafio Cypress', () => {
     PaginaLogin.preencherPassword()
   })
 
-  it.only('Realizar Cadastro com Sucesso', () => {
+  it('Realizar Cadastro com Sucesso', () => {
 
     PaginaInicial.acessarPgLogin()
     PaginaLogin.novoCadNome()
