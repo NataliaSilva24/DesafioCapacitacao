@@ -24,8 +24,7 @@ class PaginaInicial {
     validarLogin(validarLogin){
         cy.get(el.validarLogin).should('exist')
     }
-
-
+    
 
 
 }

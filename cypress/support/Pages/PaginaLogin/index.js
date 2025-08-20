@@ -22,7 +22,7 @@ class PaginaLogin {
     }
 
     novoCadEmail(newCadEmail){
-        cy.get(el.newCadEmail).type('emily_vieira5@eventos.com.br')
+        cy.get(el.newCadEmail).type('tiago-barros244@teravida.com.br')
     }
 
     novoBtnCad(novoBtnCad){

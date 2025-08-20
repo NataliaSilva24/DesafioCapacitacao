@@ -7,5 +7,6 @@ export const ELEMENTS ={
     imgAutomation: 'img[src="/static/images/home/logo.png"]',
     clicarPgLogin: '.shop-menu',
     validarLogin: 'a[href="/logout"]'
-    
+   
+  
 }

@@ -48,6 +48,7 @@ class Cadastro {
 
     validarMsgSucesso(txtCadSucesso){
         cy.get(el.txtCadSucesso).should('have.text','Account Created!')
+        cy.get('[data-qa="account-created"]').should('have.text','Account Created!')
     }
    
 }

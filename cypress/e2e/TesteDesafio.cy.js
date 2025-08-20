@@ -3,6 +3,8 @@
 import PaginaInicial from '../support/Pages/PaginaInicial'
 import PaginaLogin from '../support/Pages/PaginaLogin'
 import Cadastro from '../support/Pages/Cadastro'
+import SelecionarProdutos from '../support/Pages/SelecionarProdutos'
+import Pagamento from '../support/Pages/Pagamento'
 
 
 describe('Teste Desafio Cypress', () => {
@@ -20,7 +22,7 @@ describe('Teste Desafio Cypress', () => {
     PaginaLogin.preencherPassword()
   })
 
-  it('Realizar Cadastro com Sucesso', () => {
+  it.only('Realizar Cadastro com Sucesso', () => {
 
     PaginaInicial.acessarPgLogin()
     PaginaLogin.novoCadNome()
@@ -73,7 +75,7 @@ describe('Teste Desafio Cypress', () => {
   
   })
 
-    it.only('Informar senha invalido Login com sucesso', ()=> {
+    it('Informar senha invalido Login com sucesso', ()=> {
 
     PaginaInicial.acessarPgLogin()
     PaginaLogin.preencherEmailLogin()
@@ -83,6 +85,32 @@ describe('Teste Desafio Cypress', () => {
     PaginaLogin.clicarBtnLogin()
     PaginaLogin.validarLoginInvalido()
   
+  })
+
+  it('Realizar fluxo completo de compra Women', ()=> {
+
+    // Realizar o Login 
+    PaginaInicial.acessarPgLogin()
+    PaginaLogin.preencherEmailLogin()
+    PaginaLogin.preencherPassword()
+    PaginaLogin.clicarBtnLogin()
+    PaginaInicial.validarLogin()
+
+    //Selecionar produto    
+    SelecionarProdutos.selecCatWomen()
+    SelecionarProdutos.selecionarItem()
+    SelecionarProdutos.continuarComprando()
+    SelecionarProdutos.clicarCart()
+    SelecionarProdutos.clicarChekout()
+    SelecionarProdutos.clicarFazerPedido()
+
+    //Pagamento
+    Pagamento.preencherNomeCard()
+    Pagamento.preencherNumeroCard()
+    Pagamento.prenecherCVCCard()
+    Pagamento.preencherExMonth()
+    Pagamento.preencherExAno()
+    Pagamento.clicarPagar()
   })
 
 
