@@ -6,11 +6,12 @@ export const ELEMENTS ={
 
     emailLogin: '[data-qa="login-email"]',
     senhaLogin: '[data-qa="login-password"]',
-    btnLogin: '[data-qa="login-button"]',
+    btnLogin: 'button[data-qa="login-button"]',
     newCadNome: '[data-qa="signup-name"]',
     newCadEmail: '[data-qa="signup-email"]',
     newBtnCadSignup: '.signup-form',
-
+    txtErro: 'p[style="color: red;"]',
     validarPgLogin: 'input[type="email"]'
+   
     
 }

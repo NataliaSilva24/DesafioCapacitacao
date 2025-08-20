@@ -6,15 +6,15 @@ const el = require('./elements').ELEMENTS
 class PaginaLogin {
 
     preencherEmailLogin(emailLogin){
-        cy.get(el.emailLogin).type('m@m.com')
+        cy.get(el.emailLogin).type('emily_vieira5@eventos.com.br')
     }
 
     preencherPassword(senhaLogin){
-        cy.get(el.senhaLogin).type('12345')
+        cy.get(el.senhaLogin).type('Senha@123')
     }
 
     clicarBtnLogin(btnLogin){
-        cy.get(el.btnLogin).click
+        cy.get(el.btnLogin).parent().contains('button', 'Login').click()
     }
 
     novoCadNome(newCadNome){
@@ -22,17 +22,20 @@ class PaginaLogin {
     }
 
     novoCadEmail(newCadEmail){
-        cy.get(el.newCadEmail).type('emily_vieira@eventos.com.br')
+        cy.get(el.newCadEmail).type('emily_vieira5@eventos.com.br')
     }
 
     novoBtnCad(novoBtnCad){
         cy.get(el.newBtnCadSignup).parent().contains('button', 'Signup').click()
     }
 
-    
+    validarMsgEmailExist(txtErro){
+        cy.get(el.txtErro).should('have.text','Email Address already exist!')
+    }
 
-
-
+    validarLoginInvalido(txtErro){
+        cy.get(el.txtErro).should('have.text','Your email or password is incorrect!')
+    }
 
 }
 

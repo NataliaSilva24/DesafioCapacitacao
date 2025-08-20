@@ -21,7 +21,9 @@ class PaginaInicial {
         cy.get(el.senhaLogin).type('12345')
     }
 
-    
+    validarLogin(validarLogin){
+        cy.get(el.validarLogin).should('exist')
+    }
 
 
 

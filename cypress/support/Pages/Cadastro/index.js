@@ -6,35 +6,8 @@ class Cadastro {
         cy.get(el.sucessoLogin).should('exist')
     }
 
-    preencherTitleMr(selecTitleMr){
-        cy.get(el.selecTitleMr).click
-    }
-
-    preencherTitleMrs(selecTitleMrs){
-        cy.get(el.selecTitleMrs).check
-    }
-
     preencherNewPasswor(newCadPassword){
         cy.get(el.newCadPassword).type('Senha@123')
-    }
-
-    preencherDiaAniv(diaAniv){
-        cy.get(el.diaAniv).click
-        cy.get('option[value="2"]').click
-    }
-
-    preencherMesAniv(mesAniv){
-        cy.get(el.mesAniv).click
-        cy.get('option[value="2"]').click
-    }
-
-    preencherAnoAniv(anoAviv){
-        cy,get(el.anoAviv).click
-        cy.get('option[value="2000"]').click
-    }
-
-    selecionarNewsletter(checkNewsletter){
-        cy.get(el.checkNewsletter).check
     }
 
     preencherFirstName(cadFirstName){
@@ -53,11 +26,6 @@ class Cadastro {
         cy.get(el.cadAddress).type('Descubra')
     }
 
-    preencherPais(cadCountry){
-        cy.get(el.cadCountry).click
-        cy.get('option[value="Israel"]').click
-    }
-
     preencherEstado(cadState){
         cy.get(el.cadState).type('Ariel')
     }
@@ -73,7 +41,15 @@ class Cadastro {
     preencherTelefone(cadMobileNumber){
         cy.get(el.cadMobileNumber).type('972 98562558')
     }
-    
+
+    clicarCriar(btnCadCreate){
+        cy.get(el.btnCadCreate).parent().contains('button', 'Create Account').click()
+    }
+
+    validarMsgSucesso(txtCadSucesso){
+        cy.get(el.txtCadSucesso).should('have.text','Account Created!')
+    }
+   
 }
 
 export default new Cadastro()
